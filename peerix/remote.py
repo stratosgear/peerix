@@ -166,7 +166,7 @@ class DiscoveryProtocol(asyncio.DatagramProtocol, Store):
 
 
 @contextlib.asynccontextmanager
-async def remote(store: Store, local_port: int, local_addr: str="0.0.0.0", prefix: str="local", timeout: float = 0.05):
+async def remote(store: Store, local_port: int, local_addr: str="0.0.0.0", prefix: str="local", timeout: float = 1.2):
     protocol: DiscoveryProtocol
     async with aiohttp.ClientSession(timeout=aiohttp.ClientTimeout(sock_connect=timeout)) as session:
         _, protocol = await asyncio.get_running_loop().create_datagram_endpoint(
