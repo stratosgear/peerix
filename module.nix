@@ -104,7 +104,6 @@ in
           "@network-io"
           "@timer"
           "@signal"
-          "@alarm"
         ];
         SystemCallErrorNumber = "EPERM";
 
